@@ -1,0 +1,12 @@
+{
+  "name": "nodejs-programming",
+  "version": "1.0.0",
+  "description": "��n\u0000o\u0000d\u0000e\u0000 \u0000p\u0000r\u0000o\u0000c\u0000e\u0000s\u0000s\u0000\r\u0000 \u0000",
+  "main": "fileWordCount.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
