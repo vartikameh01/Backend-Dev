@@ -1,0 +1,328 @@
+
+Time: 24/1/2026, 1:46:47 am
+Platform: win32
+CPU Model: Intel(R) Core(TM) i3-4005U CPU @ 1.70GHz
+CPU Cores: 4
+Total Memory: 8096.02 MB
+Free Memory: 2578.11 MB
+----------------------------
+
+Time: 24/1/2026, 1:46:52 am
+Platform: win32
+CPU Model: Intel(R) Core(TM) i3-4005U CPU @ 1.70GHz
+CPU Cores: 4
+Total Memory: 8096.02 MB
+Free Memory: 2563.57 MB
+----------------------------
+
+Time: 24/1/2026, 1:46:57 am
+Platform: win32
+CPU Model: Intel(R) Core(TM) i3-4005U CPU @ 1.70GHz
+CPU Cores: 4
+Total Memory: 8096.02 MB
+Free Memory: 2539.54 MB
+----------------------------
+
+Time: 24/1/2026, 1:47:02 am
+Platform: win32
+CPU Model: Intel(R) Core(TM) i3-4005U CPU @ 1.70GHz
+CPU Cores: 4
+Total Memory: 8096.02 MB
+Free Memory: 2532.18 MB
+----------------------------
+
+Time: 24/1/2026, 1:47:07 am
+Platform: win32
+CPU Model: Intel(R) Core(TM) i3-4005U CPU @ 1.70GHz
+CPU Cores: 4
+Total Memory: 8096.02 MB
+Free Memory: 2543.32 MB
+----------------------------
+
+Time: 24/1/2026, 1:47:12 am
+Platform: win32
+CPU Model: Intel(R) Core(TM) i3-4005U CPU @ 1.70GHz
+CPU Cores: 4
+Total Memory: 8096.02 MB
+Free Memory: 2415.50 MB
+----------------------------
+
+Time: 24/1/2026, 1:47:17 am
+Platform: win32
+CPU Model: Intel(R) Core(TM) i3-4005U CPU @ 1.70GHz
+CPU Cores: 4
+Total Memory: 8096.02 MB
+Free Memory: 2428.85 MB
+----------------------------
+
+Time: 24/1/2026, 1:47:22 am
+Platform: win32
+CPU Model: Intel(R) Core(TM) i3-4005U CPU @ 1.70GHz
+CPU Cores: 4
+Total Memory: 8096.02 MB
+Free Memory: 2506.14 MB
+----------------------------
+
+Time: 24/1/2026, 1:47:27 am
+Platform: win32
+CPU Model: Intel(R) Core(TM) i3-4005U CPU @ 1.70GHz
+CPU Cores: 4
+Total Memory: 8096.02 MB
+Free Memory: 2514.87 MB
+----------------------------
+
+Time: 24/1/2026, 1:47:32 am
+Platform: win32
+CPU Model: Intel(R) Core(TM) i3-4005U CPU @ 1.70GHz
+CPU Cores: 4
+Total Memory: 8096.02 MB
+Free Memory: 2495.33 MB
+----------------------------
+
+Time: 24/1/2026, 1:47:37 am
+Platform: win32
+CPU Model: Intel(R) Core(TM) i3-4005U CPU @ 1.70GHz
+CPU Cores: 4
+Total Memory: 8096.02 MB
+Free Memory: 2345.44 MB
+----------------------------
+
+Time: 24/1/2026, 1:47:42 am
+Platform: win32
+CPU Model: Intel(R) Core(TM) i3-4005U CPU @ 1.70GHz
+CPU Cores: 4
+Total Memory: 8096.02 MB
+Free Memory: 2360.86 MB
+----------------------------
+
+Time: 24/1/2026, 1:47:47 am
+Platform: win32
+CPU Model: Intel(R) Core(TM) i3-4005U CPU @ 1.70GHz
+CPU Cores: 4
+Total Memory: 8096.02 MB
+Free Memory: 2416.13 MB
+----------------------------
+
+Time: 24/1/2026, 1:47:52 am
+Platform: win32
+CPU Model: Intel(R) Core(TM) i3-4005U CPU @ 1.70GHz
+CPU Cores: 4
+Total Memory: 8096.02 MB
+Free Memory: 2396.88 MB
+----------------------------
+
+Time: 24/1/2026, 1:47:57 am
+Platform: win32
+CPU Model: Intel(R) Core(TM) i3-4005U CPU @ 1.70GHz
+CPU Cores: 4
+Total Memory: 8096.02 MB
+Free Memory: 2406.47 MB
+----------------------------
+
+Time: 24/1/2026, 1:48:02 am
+Platform: win32
+CPU Model: Intel(R) Core(TM) i3-4005U CPU @ 1.70GHz
+CPU Cores: 4
+Total Memory: 8096.02 MB
+Free Memory: 2404.75 MB
+----------------------------
+
+Time: 24/1/2026, 1:48:07 am
+Platform: win32
+CPU Model: Intel(R) Core(TM) i3-4005U CPU @ 1.70GHz
+CPU Cores: 4
+Total Memory: 8096.02 MB
+Free Memory: 2301.70 MB
+----------------------------
+
+Time: 24/1/2026, 1:48:12 am
+Platform: win32
+CPU Model: Intel(R) Core(TM) i3-4005U CPU @ 1.70GHz
+CPU Cores: 4
+Total Memory: 8096.02 MB
+Free Memory: 2452.23 MB
+----------------------------
+
+Time: 24/1/2026, 1:48:17 am
+Platform: win32
+CPU Model: Intel(R) Core(TM) i3-4005U CPU @ 1.70GHz
+CPU Cores: 4
+Total Memory: 8096.02 MB
+Free Memory: 2403.13 MB
+----------------------------
+
+Time: 24/1/2026, 1:48:22 am
+Platform: win32
+CPU Model: Intel(R) Core(TM) i3-4005U CPU @ 1.70GHz
+CPU Cores: 4
+Total Memory: 8096.02 MB
+Free Memory: 2392.07 MB
+----------------------------
+
+Time: 24/1/2026, 1:48:27 am
+Platform: win32
+CPU Model: Intel(R) Core(TM) i3-4005U CPU @ 1.70GHz
+CPU Cores: 4
+Total Memory: 8096.02 MB
+Free Memory: 2396.19 MB
+----------------------------
+
+Time: 24/1/2026, 1:48:32 am
+Platform: win32
+CPU Model: Intel(R) Core(TM) i3-4005U CPU @ 1.70GHz
+CPU Cores: 4
+Total Memory: 8096.02 MB
+Free Memory: 2436.33 MB
+----------------------------
+
+Time: 24/1/2026, 1:48:37 am
+Platform: win32
+CPU Model: Intel(R) Core(TM) i3-4005U CPU @ 1.70GHz
+CPU Cores: 4
+Total Memory: 8096.02 MB
+Free Memory: 2441.17 MB
+----------------------------
+
+Time: 24/1/2026, 1:48:42 am
+Platform: win32
+CPU Model: Intel(R) Core(TM) i3-4005U CPU @ 1.70GHz
+CPU Cores: 4
+Total Memory: 8096.02 MB
+Free Memory: 2473.69 MB
+----------------------------
+
+Time: 24/1/2026, 1:48:47 am
+Platform: win32
+CPU Model: Intel(R) Core(TM) i3-4005U CPU @ 1.70GHz
+CPU Cores: 4
+Total Memory: 8096.02 MB
+Free Memory: 2469.48 MB
+----------------------------
+
+Time: 24/1/2026, 1:48:52 am
+Platform: win32
+CPU Model: Intel(R) Core(TM) i3-4005U CPU @ 1.70GHz
+CPU Cores: 4
+Total Memory: 8096.02 MB
+Free Memory: 2405.46 MB
+----------------------------
+
+Time: 24/1/2026, 1:48:57 am
+Platform: win32
+CPU Model: Intel(R) Core(TM) i3-4005U CPU @ 1.70GHz
+CPU Cores: 4
+Total Memory: 8096.02 MB
+Free Memory: 2370.44 MB
+----------------------------
+
+Time: 24/1/2026, 1:49:02 am
+Platform: win32
+CPU Model: Intel(R) Core(TM) i3-4005U CPU @ 1.70GHz
+CPU Cores: 4
+Total Memory: 8096.02 MB
+Free Memory: 2401.48 MB
+----------------------------
+
+Time: 24/1/2026, 1:49:07 am
+Platform: win32
+CPU Model: Intel(R) Core(TM) i3-4005U CPU @ 1.70GHz
+CPU Cores: 4
+Total Memory: 8096.02 MB
+Free Memory: 2416.45 MB
+----------------------------
+
+Time: 24/1/2026, 1:49:12 am
+Platform: win32
+CPU Model: Intel(R) Core(TM) i3-4005U CPU @ 1.70GHz
+CPU Cores: 4
+Total Memory: 8096.02 MB
+Free Memory: 2424.97 MB
+----------------------------
+
+Time: 24/1/2026, 1:49:17 am
+Platform: win32
+CPU Model: Intel(R) Core(TM) i3-4005U CPU @ 1.70GHz
+CPU Cores: 4
+Total Memory: 8096.02 MB
+Free Memory: 2427.19 MB
+----------------------------
+
+Time: 24/1/2026, 1:51:33 am
+Platform: win32
+CPU Model: Intel(R) Core(TM) i3-4005U CPU @ 1.70GHz
+CPU Cores: 4
+Total Memory: 8096.02 MB
+Free Memory: 2481.93 MB
+----------------------------
+
+Time: 24/1/2026, 1:51:38 am
+Platform: win32
+CPU Model: Intel(R) Core(TM) i3-4005U CPU @ 1.70GHz
+CPU Cores: 4
+Total Memory: 8096.02 MB
+Free Memory: 2461.77 MB
+----------------------------
+
+Time: 24/1/2026, 1:51:43 am
+Platform: win32
+CPU Model: Intel(R) Core(TM) i3-4005U CPU @ 1.70GHz
+CPU Cores: 4
+Total Memory: 8096.02 MB
+Free Memory: 2453.57 MB
+----------------------------
+
+Time: 24/1/2026, 1:51:48 am
+Platform: win32
+CPU Model: Intel(R) Core(TM) i3-4005U CPU @ 1.70GHz
+CPU Cores: 4
+Total Memory: 8096.02 MB
+Free Memory: 2434.70 MB
+----------------------------
+
+Time: 24/1/2026, 1:51:53 am
+Platform: win32
+CPU Model: Intel(R) Core(TM) i3-4005U CPU @ 1.70GHz
+CPU Cores: 4
+Total Memory: 8096.02 MB
+Free Memory: 2431.28 MB
+----------------------------
+
+Time: 24/1/2026, 1:52:11 am
+Platform: win32
+CPU Model: Intel(R) Core(TM) i3-4005U CPU @ 1.70GHz
+CPU Cores: 4
+Total Memory: 8096.02 MB
+Free Memory: 2454.51 MB
+----------------------------
+
+Time: 24/1/2026, 1:52:16 am
+Platform: win32
+CPU Model: Intel(R) Core(TM) i3-4005U CPU @ 1.70GHz
+CPU Cores: 4
+Total Memory: 8096.02 MB
+Free Memory: 2444.74 MB
+----------------------------
+
+Time: 24/1/2026, 1:52:21 am
+Platform: win32
+CPU Model: Intel(R) Core(TM) i3-4005U CPU @ 1.70GHz
+CPU Cores: 4
+Total Memory: 8096.02 MB
+Free Memory: 2449.93 MB
+----------------------------
+
+Time: 24/1/2026, 1:52:26 am
+Platform: win32
+CPU Model: Intel(R) Core(TM) i3-4005U CPU @ 1.70GHz
+CPU Cores: 4
+Total Memory: 8096.02 MB
+Free Memory: 2449.34 MB
+----------------------------
+
+Time: 24/1/2026, 1:52:31 am
+Platform: win32
+CPU Model: Intel(R) Core(TM) i3-4005U CPU @ 1.70GHz
+CPU Cores: 4
+Total Memory: 8096.02 MB
+Free Memory: 2447.80 MB
+----------------------------
