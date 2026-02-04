@@ -1,3 +1,5 @@
+
+// word count program
 const fs= require("fs");
 fs.readFile("input.txt","utf8",(err,data)=>{ //asynchronous function
     if(err){
