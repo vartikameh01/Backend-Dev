@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Users</title>
+    <style>
+        body {
+            font-family: Arial;
+            padding: 20px;
+        }
+        input {
+            padding: 6px;
+        }
+        button {
+            padding: 6px 10px;
+        }
+        ul {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>User List</h2>
+
+    <form method="GET" action="/users">
+        <input type="text" name="name" placeholder="Search by name">
+        <button type="submit">Search</button>
+    </form>
+
+    <ul>
+        <% if (users.length === 0) { %>
+            <li>No users found</li>
+        <% } else { %>
+            <% users.forEach(user => { %>
+                <li>
+                    ID: <%= user.id %> |
+                    Name: <%= user.name %>
+                </li>
+            <% }) %>
+        <% } %>
+    </ul>
+
+    <br>
+    <a href="/contact">Contact</a> |
+    <a href="/gallery">Gallery</a> |
+    <a href="/blog">Blog</a>
+</body>
+</html>

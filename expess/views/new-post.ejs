@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>New Post</title>
+</head>
+<body>
+    <h2>Create New Blog Post</h2>
+
+    <form method="POST" action="/new-post">
+        <input type="text" name="title" placeholder="Title" required><br><br>
+        <textarea name="content" placeholder="Content" required></textarea><br><br>
+        <button type="submit">Add Post</button>
+    </form>
+
+    <br>
+    <a href="/blog">Back to Blog</a>
+</body>
+</html>
