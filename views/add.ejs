@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Add Employee</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Register New Employee</h1>
+
+    <form action="/add" method="POST" class="form">
+      <div class="form-group">
+        <label for="name">Employee Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter full name" required />
+      </div>
+
+      <div class="form-group">
+        <label for="department">Department</label>
+        <input type="text" id="department" name="department" placeholder="Enter department" required />
+      </div>
+
+      <div class="form-group">
+        <label for="salary">Basic Salary (₹)</label>
+        <input type="number" id="salary" name="salary" placeholder="Enter basic salary" min="0" required />
+      </div>
+
+      <div class="form-actions">
+        <button type="submit" class="btn btn-add">Add Employee</button>
+        <a href="/" class="btn btn-cancel">Cancel</a>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
