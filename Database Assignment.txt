@@ -1,0 +1,221 @@
+Assignment(Database)
+Practice Exercises:
+Exercise 1: Database Selection 
+.Online Banking System – SQL database is suitable because banking requires strong consistency, structured data, and secure transactions following ACID properties.
+.Social Media Platform – NoSQL database is preferred since it handles large amounts of unstructured data like posts, comments, and likes and supports high scalability.
+.Real-time Chat Application – NoSQL database is used because it supports fast data writing and real-time communication with flexible data structures.
+.Hospital Patient Records – SQL database is appropriate as medical data requires high accuracy, structure, and strong data integrity.
+.IoT Sensor Data Collection – NoSQL database is ideal because it can store large volumes of continuously generated sensor data and scale easily.
+
+Exercise 2: (CAP Theorem Analysis)
+.Stock Trading Platform – Prioritizes Consistency and Partition Tolerance (CP) to ensure accurate financial transactions.
+.Content Delivery Network (CDN) – Prioritizes Availability and Partition Tolerance (AP) so users can always access content even during network failures.
+.Airline Booking System – Focuses on Consistency and Partition Tolerance (CP) to prevent double booking of seats.
+.Video Streaming Service – Prioritizes Availability and Partition Tolerance (AP) so users can watch videos without interruption even if data updates are slightly delayed.
+
+
+Exercise 3:(MongoDB Operations)
+Step 1: Create Database:
+use libraryDB
+
+Step 2: Add New Books
+db.books.insertOne({
+  title: "MongoDB Basics",
+  author: "John Smith",
+  available: true
+})
+
+db.books.insertOne({
+  title: "Database Systems",
+  author: "Navathe",
+  available: true
+})
+
+Step 3: Find Books by Author
+db.books.find({ author: "Navathe" })
+
+
+Step 4: Update Book Availability
+db.books.updateOne(
+ { title: "Database Systems" },
+ { $set: { available: false } }
+)
+
+Step 5: Track Borrowed Books by User
+
+Create borrowed collection:
+
+db.borrowed.insertOne({
+  user: "Rahul",
+  book: "Database Systems",
+  borrowDate: new Date()
+})
+
+Find books borrowed by a user:
+
+db.borrowed.find({ user: "Rahul" })
+
+
+Exercise 4:(JSON → BSON Conversion)
+Given JSON
+{
+"orderId": "12345",
+"orderDate": "2024-01-15",
+"totalAmount": "99.99",
+"items": ["item1", "item2"]
+}
+
+Step 1: Convert Data Types
+Field	        BSON Type
+orderId	        NumberInt
+orderDate	ISODate
+totalAmount	Decimal
+items	         Array
+
+
+Step 2: Final BSON Format
+{
+ orderId: NumberInt(12345),
+ orderDate: ISODate("2024-01-15"),
+ totalAmount: NumberDecimal("99.99"),
+ items: ["item1", "item2"]
+}
+
+
+CRUD operations:
+
+Exercise 1:(Basic CRUD)
+Step 1: Create Database
+use studentDB
+
+Step 2: Create Collection
+db.students.insertOne({
+  name: "Rahul Sharma",
+  email: "rahul@gmail.com",
+  city: "Delhi",
+  department: "Computer Science",
+  gpa: 3.4,
+  courses: ["DBMS", "OS", "AI"]
+})
+
+Step 3: Add New Student
+db.students.insertOne({
+  name: "Anita Verma",
+  email: "anita@gmail.com",
+  city: "Lucknow",
+  department: "IT",
+  gpa: 3.6,
+  courses: ["ML", "DBMS", "CN"]
+})
+
+Step 4: View All Students
+db.students.find()
+
+Step 5:Find Student by Email
+db.students.find({ email: "anita@gmail.com" })
+
+Step 6:Update Student GPA
+db.students.updateOne(
+  { email: "anita@gmail.com" },
+  { $set: { gpa: 3.8 } }
+)
+
+Step 7:Delete Student
+db.students.deleteOne({ email: "anita@gmail.com" })
+
+Exercise 2:(Advanced Queries)
+
+Step 1: Students with GPA between 3.0 and 3.5
+db.students.find({
+  gpa: { $gte: 3.0, $lte: 3.5 }
+})
+
+Step 2:Students Enrolled in More Than 5 Courses
+db.students.find({
+  courses: { $size: 6 }
+})
+
+Step 3:Top 10 Students by GPA
+db.students.find()
+.sort({ gpa: -1 })
+.limit(10)
+
+Step 4:Count Students by City
+db.students.aggregate([
+  {
+    $group: {
+      _id: "$city",
+      totalStudents: { $sum: 1 }
+    }
+  }
+])
+
+Exercise3:(Schema Design)
+
+Step1:Course with Prerequisites
+{
+  courseId: "CS101",
+  courseName: "Data Structures",
+  prerequisites: ["CS100"]
+}
+
+Step2:Professor with Multiple Departments
+{
+  professorId: "P100",
+  name: "Dr. Mehta",
+  departments: ["Computer Science", "IT"]
+}
+
+Step3:Grade with Student and Course References
+{
+  studentId: ObjectId("student_id_here"),
+  courseId: ObjectId("course_id_here"),
+  grade: "A",
+  semester: "Spring 2024"
+}
+
+Exercise 4:(Aggregation)
+
+Step 1:Average GPA by Department
+db.students.aggregate([
+  {
+    $group: {
+      _id: "$department",
+      avgGPA: { $avg: "$gpa" }
+    }
+  }
+])
+
+Step2:Most Popular Courses
+db.students.aggregate([
+  { $unwind: "$courses" },
+  {
+    $group: {
+      _id: "$courses",
+      totalStudents: { $sum: 1 }
+    }
+  },
+  { $sort: { totalStudents: -1 } }
+])
+
+Step3:Student Performance Report
+db.students.aggregate([
+  {
+    $project: {
+      name: 1,
+      department: 1,
+      gpa: 1,
+      performance: {
+        $cond: {
+          if: { $gte: ["$gpa", 3.5] },
+          then: "Excellent",
+          else: "Average"
+        }
+      }
+    }
+  }
+])
+
+
+
+
