@@ -33,7 +33,7 @@ app.use("/lang", langRoutes);
 
 // Home
 app.get("/", (req, res) => {
-  res.send("Session Project Running ✅");
+  res.send("Session Project Running");
 });
 
 app.listen(3000, () => {
