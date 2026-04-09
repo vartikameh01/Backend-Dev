@@ -18,7 +18,7 @@ router.post("/login", (req, res) => {
 
 // Admin panel
 router.get("/dashboard", isAuth, isAdmin, (req, res) => {
-  res.send("Welcome Admin Panel 🔐");
+  res.send("Welcome Admin Panel");
 });
 
 export default router;
