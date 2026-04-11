@@ -1,7 +1,7 @@
 // config/session.js
 
 import dotenv from "dotenv";
-dotenv.config();   // ✅ ADD THIS LINE
+dotenv.config();   
 
 import session from "express-session";
 import MongoStore from "connect-mongo";
