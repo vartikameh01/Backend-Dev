@@ -1,7 +1,3 @@
-/**
- * Disaster Recovery & Backup Service - EduLearn
- * Database backups and session management for resilience
- */
 
 const { exec } = require('child_process');
 const path = require('path');
@@ -12,18 +8,14 @@ const logger = require('../utils/logger');
 const BACKUP_DIR = process.env.BACKUP_PATH || path.join(__dirname, '../../backups');
 const RETENTION_DAYS = parseInt(process.env.BACKUP_RETENTION_DAYS) || 30;
 
-/**
- * Ensure backup directory exists
- */
+
 const ensureBackupDir = () => {
   if (!fs.existsSync(BACKUP_DIR)) {
     fs.mkdirSync(BACKUP_DIR, { recursive: true });
   }
 };
 
-/**
- * Create a MongoDB backup using mongodump
- */
+
 const createBackup = () => {
   return new Promise((resolve, reject) => {
     ensureBackupDir();
@@ -63,9 +55,7 @@ const createBackup = () => {
   });
 };
 
-/**
- * Restore from a backup
- */
+
 const restoreBackup = (backupName) => {
   return new Promise((resolve, reject) => {
     const backupPath = path.join(BACKUP_DIR, backupName);
@@ -101,9 +91,6 @@ const restoreBackup = (backupName) => {
   });
 };
 
-/**
- * Remove backups older than retention period
- */
 const cleanOldBackups = () => {
   ensureBackupDir();
 
@@ -127,9 +114,7 @@ const cleanOldBackups = () => {
   return { removed };
 };
 
-/**
- * List available backups
- */
+
 const listBackups = () => {
   ensureBackupDir();
 
@@ -142,9 +127,7 @@ const listBackups = () => {
     .sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
 };
 
-/**
- * Calculate checksum of directory contents for integrity checking
- */
+
 const calculateDirectoryChecksum = (dirPath) => {
   const hash = crypto.createHash('sha256');
 
@@ -169,9 +152,6 @@ const calculateDirectoryChecksum = (dirPath) => {
   return hash.digest('hex');
 };
 
-/**
- * Session health check - verify MongoStore connection
- */
 const checkSessionStore = async (sessionStore) => {
   return new Promise((resolve) => {
     sessionStore.length((err, len) => {
