@@ -1,7 +1,4 @@
-/**
- * Secure File Upload Middleware
- * Validates file types, sizes, and scans for malicious content
- */
+
 
 const multer = require('multer');
 const path = require('path');
@@ -37,9 +34,7 @@ const MAGIC_BYTES = {
   'video/mp4': [Buffer.from([0x00, 0x00, 0x00]), Buffer.from([0x66, 0x74, 0x79, 0x70])],
 };
 
-/**
- * Verify file's magic bytes match claimed MIME type
- */
+
 const verifyMagicBytes = (buffer, mimeType) => {
   const signatures = MAGIC_BYTES[mimeType];
   if (!signatures) return true; // Skip check if no known signature
@@ -49,9 +44,7 @@ const verifyMagicBytes = (buffer, mimeType) => {
   );
 };
 
-/**
- * Scan file content for suspicious patterns
- */
+
 const scanForMaliciousContent = (buffer) => {
   const content = buffer.toString('utf8', 0, Math.min(buffer.length, 65536));
 
