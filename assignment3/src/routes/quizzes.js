@@ -1,8 +1,3 @@
-/**
- * Quiz Routes - EduLearn
- * Server-side grading prevents answer manipulation
- */
-
 const express = require('express');
 const router = express.Router();
 const crypto = require('crypto');
@@ -15,10 +10,6 @@ const { validateQuizInput, validateMongoId } = require('../utils/sanitizer');
 const { quizSubmitLimiter } = require('../middleware/rateLimiter');
 const logger = require('../utils/logger');
 
-// ========================
-// POST /api/quizzes
-// Instructor creates quiz
-// ========================
 router.post('/', isAuthenticated, isMfaVerified, authorize('instructor', 'admin'), validateQuizInput, async (req, res, next) => {
   try {
     const errors = validationResult(req);
@@ -51,10 +42,7 @@ router.post('/', isAuthenticated, isMfaVerified, authorize('instructor', 'admin'
   }
 });
 
-// ========================
-// GET /api/quizzes/:id
-// Returns questions WITHOUT correct answers
-// ========================
+
 router.get('/:id', isAuthenticated, validateMongoId, async (req, res, next) => {
   try {
     const errors = validationResult(req);
@@ -69,10 +57,7 @@ router.get('/:id', isAuthenticated, validateMongoId, async (req, res, next) => {
   }
 });
 
-// ========================
-// POST /api/quizzes/:id/submit
-// Server-side grading - prevents answer manipulation
-// ========================
+
 router.post('/:id/submit', isAuthenticated, authorize('student'), quizSubmitLimiter, validateMongoId, async (req, res, next) => {
   try {
     const errors = validationResult(req);
