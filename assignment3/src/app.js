@@ -1,7 +1,3 @@
-/**
- * EduLearn - Secure Online Learning Platform
- * Main Application Entry Point
- */
 
 require('dotenv').config();
 const express = require('express');
@@ -29,9 +25,6 @@ const uploadRoutes = require('./routes/uploads');
 
 const app = express();
 
-// ======================
-// Security Middleware
-// ======================
 
 // Helmet security headers (configured for video streaming, Stripe, analytics)
 app.use(helmet(helmetConfig));
@@ -66,21 +59,14 @@ app.use(hpp());
 // Global rate limiter
 app.use('/api/', apiLimiter);
 
-// ======================
-// Session Configuration
-// ======================
+
 app.use(session(sessionConfig));
 
-// ======================
-// Logging
-// ======================
+
 app.use(morgan('combined', {
   stream: { write: (message) => logger.info(message.trim()) }
 }));
 
-// ======================
-// Routes
-// ======================
 app.use('/api/auth', authRoutes);
 app.use('/api/courses', courseRoutes);
 app.use('/api/quizzes', quizRoutes);
@@ -96,9 +82,6 @@ app.get('/health', (req, res) => {
   });
 });
 
-// ======================
-// Error Handling
-// ======================
 app.use(errorHandler);
 
 // Handle 404
@@ -106,9 +89,7 @@ app.use((req, res) => {
   res.status(404).json({ error: 'Resource not found' });
 });
 
-// ======================
-// Database & Server
-// ======================
+
 const PORT = process.env.PORT || 3000;
 
 const connectDB = async () => {
