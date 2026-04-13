@@ -1,7 +1,3 @@
-/**
- * Auth Routes - EduLearn
- * Registration, login, MFA, password reset
- */
 
 const express = require('express');
 const router = express.Router();
@@ -16,9 +12,6 @@ const { isAuthenticated, isMfaVerified } = require('../middleware/auth');
 const logger = require('../utils/logger');
 const { sanitizePlainText } = require('../utils/sanitizer');
 
-// ========================
-// Input Validators
-// ========================
 const registerValidator = [
   body('email').isEmail().normalizeEmail().withMessage('Valid email required'),
   body('password')
@@ -41,9 +34,6 @@ const loginValidator = [
   body('password').notEmpty().withMessage('Password required')
 ];
 
-// ========================
-// POST /api/auth/register
-// ========================
 router.post('/register', registerLimiter, registerValidator, async (req, res, next) => {
   try {
     const errors = validationResult(req);
@@ -74,9 +64,6 @@ router.post('/register', registerLimiter, registerValidator, async (req, res, ne
   }
 });
 
-// ========================
-// POST /api/auth/login
-// ========================
 router.post('/login', loginLimiter, loginValidator, async (req, res, next) => {
   try {
     const errors = validationResult(req);
@@ -140,9 +127,7 @@ async function bcryptCompareStub() {
   await bcrypt.compare('stub', '$2b$12$stubhashforenumerationprotection1234567');
 }
 
-// ========================
-// POST /api/auth/mfa/verify
-// ========================
+
 router.post('/mfa/verify', async (req, res, next) => {
   try {
     const { token } = req.body;
@@ -180,9 +165,6 @@ router.post('/mfa/verify', async (req, res, next) => {
   }
 });
 
-// ========================
-// POST /api/auth/mfa/setup
-// ========================
 router.post('/mfa/setup', isAuthenticated, async (req, res, next) => {
   try {
     const user = await User.findById(req.session.userId);
@@ -202,9 +184,6 @@ router.post('/mfa/setup', isAuthenticated, async (req, res, next) => {
   }
 });
 
-// ========================
-// POST /api/auth/mfa/enable
-// ========================
 router.post('/mfa/enable', isAuthenticated, async (req, res, next) => {
   try {
     const { token } = req.body;
@@ -224,9 +203,6 @@ router.post('/mfa/enable', isAuthenticated, async (req, res, next) => {
   }
 });
 
-// ========================
-// POST /api/auth/logout
-// ========================
 router.post('/logout', isAuthenticated, (req, res) => {
   const userId = req.session.userId;
   req.session.destroy((err) => {
@@ -237,9 +213,6 @@ router.post('/logout', isAuthenticated, (req, res) => {
   });
 });
 
-// ========================
-// POST /api/auth/forgot-password
-// ========================
 router.post('/forgot-password', passwordResetLimiter, [
   body('email').isEmail().normalizeEmail()
 ], async (req, res, next) => {
@@ -271,9 +244,6 @@ router.post('/forgot-password', passwordResetLimiter, [
   }
 });
 
-// ========================
-// POST /api/auth/reset-password/:token
-// ========================
 router.post('/reset-password/:token', [
   body('password')
     .isLength({ min: 12 })
