@@ -26,12 +26,11 @@ configureHelmet(app);           // Task 5: Helmet with healthcare-specific confi
 configureSession(app);          // Task 1: Session management with timeouts
 app.use(compression());
 
-// ─── Body Parsing ─────────────────────────────────────────────────────────────
+
 app.use(express.json({ limit: '50kb' }));        // Limit payload size
 app.use(express.urlencoded({ extended: true, limit: '50kb' }));
 
-// ─── MongoDB Injection Protection ────────────────────────────────────────────
-// Task 4: Strip $-prefixed keys from all incoming requests
+
 app.use(mongoSanitize({
   replaceWith: '_',
   onSanitize: ({ req, key }) => {
@@ -43,7 +42,7 @@ app.use(mongoSanitize({
   },
 }));
 
-// ─── CORS ─────────────────────────────────────────────────────────────────────
+
 const allowedOrigins = (process.env.ALLOWED_ORIGINS || '').split(',');
 app.use(require('cors')({
   origin: (origin, cb) => {
@@ -55,15 +54,14 @@ app.use(require('cors')({
   allowedHeaders: ['Content-Type', 'Authorization'],
 }));
 
-// ─── Global Rate Limiting ─────────────────────────────────────────────────────
+
 // Task 1: Protect all endpoints
 app.use(globalRateLimiter);
 
-// ─── Audit Logging ────────────────────────────────────────────────────────────
-// Task 7: Log every incoming request
+
 app.use(requestAuditLogger);
 
-// ─── Routes ───────────────────────────────────────────────────────────────────
+
 app.use('/api/auth', authRoutes);
 app.use('/api/patients', patientRoutes);
 app.use('/api/doctors', doctorRoutes);
@@ -71,11 +69,10 @@ app.use('/api/appointments', appointmentRoutes);
 app.use('/api/medical-records', medicalRecordRoutes);
 app.use('/api/documents', documentRoutes);
 
-// ─── Health check (unauthenticated, no PHI) ───────────────────────────────────
+
 app.get('/health', (_req, res) => res.json({ status: 'ok' }));
 
-// ─── Global Error Handler ─────────────────────────────────────────────────────
-// Never leak stack traces or internal details to clients
+
 app.use((err, req, res, _next) => {
   const status = err.status || 500;
   logger.error('Unhandled error', {
@@ -89,7 +86,7 @@ app.use((err, req, res, _next) => {
   });
 });
 
-// ─── Boot ─────────────────────────────────────────────────────────────────────
+
 const PORT = process.env.PORT || 3000;
 
 async function start() {
