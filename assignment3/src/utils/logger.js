@@ -1,7 +1,4 @@
-/**
- * Winston Logger Configuration
- * Production-ready logging with rotation and structured output
- */
+
 
 const winston = require('winston');
 const path = require('path');
