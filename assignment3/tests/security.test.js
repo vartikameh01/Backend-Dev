@@ -1,8 +1,3 @@
-/**
- * Security Tests - EduLearn
- * Tests for authentication, authorization, XSS, injection, rate limiting, and file uploads
- */
-
 const request = require('supertest');
 const mongoose = require('mongoose');
 const app = require('../src/app');
@@ -11,9 +6,6 @@ const Course = require('../src/models/Course');
 const { sanitizeRichText, sanitizePlainText, sanitizeQuizContent } = require('../src/utils/sanitizer');
 const { verifyMagicBytes, scanForMaliciousContent } = require('../src/middleware/fileUpload');
 
-// ========================
-// XSS Sanitization Tests
-// ========================
 describe('XSS Sanitization', () => {
   test('sanitizeRichText removes script tags', () => {
     const dirty = '<p>Hello</p><script>alert("xss")</script>';
@@ -63,9 +55,6 @@ describe('XSS Sanitization', () => {
   });
 });
 
-// ========================
-// File Upload Security Tests
-// ========================
 describe('File Upload Security', () => {
   test('verifyMagicBytes accepts valid PDF', () => {
     const pdfBuffer = Buffer.from([0x25, 0x50, 0x44, 0x46, 0x2d, 0x31, 0x2e]);
@@ -103,10 +92,6 @@ describe('File Upload Security', () => {
     expect(result.safe).toBe(true);
   });
 });
-
-// ========================
-// Password Validation Tests
-// ========================
 describe('Password Security', () => {
   test('weak password is rejected', async () => {
     const user = new User({ email: 'test@test.com', password: 'weak', name: 'Test' });
@@ -131,10 +116,6 @@ describe('Password Security', () => {
     expect(user.password).not.toBe(password);
   });
 });
-
-// ========================
-// Account Lockout Tests
-// ========================
 describe('Account Lockout', () => {
   test('account locks after 5 failed login attempts', async () => {
     const user = new User({
@@ -164,9 +145,6 @@ describe('Account Lockout', () => {
   });
 });
 
-// ========================
-// API Security Tests (Integration)
-// ========================
 describe('API Security', () => {
   test('protected route returns 401 without session', async () => {
     const res = await request(app).get('/api/messages/inbox');
@@ -223,9 +201,6 @@ describe('API Security', () => {
   });
 });
 
-// ========================
-// Input Validation Tests
-// ========================
 describe('Input Validation', () => {
   test('invalid email is rejected on registration', async () => {
     const res = await request(app)
