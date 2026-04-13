@@ -1,7 +1,3 @@
-/**
- * Input Sanitization Utilities
- * Prevents XSS while allowing rich formatting where needed
- */
 
 const { JSDOM } = require('jsdom');
 const createDOMPurify = require('dompurify');
@@ -11,10 +7,7 @@ const { body, param, query } = require('express-validator');
 const window = new JSDOM('').window;
 const DOMPurify = createDOMPurify(window);
 
-/**
- * Sanitize rich HTML content (course descriptions)
- * Allows safe formatting tags, removes scripts and event handlers
- */
+
 const sanitizeRichText = (dirty) => {
   return DOMPurify.sanitize(dirty, {
     ALLOWED_TAGS: [
@@ -41,19 +34,12 @@ const sanitizeRichText = (dirty) => {
   });
 };
 
-/**
- * Sanitize plain text (quiz answers, messages, profile info)
- * Strips ALL HTML
- */
+
 const sanitizePlainText = (dirty) => {
   if (typeof dirty !== 'string') return '';
   return DOMPurify.sanitize(dirty, { ALLOWED_TAGS: [] }).trim();
 };
 
-/**
- * Sanitize quiz content (questions and answers)
- * Allow basic formatting but no links or images
- */
 const sanitizeQuizContent = (dirty) => {
   return DOMPurify.sanitize(dirty, {
     ALLOWED_TAGS: ['strong', 'em', 'code', 'pre', 'sub', 'sup', 'br', 'p'],
@@ -62,10 +48,6 @@ const sanitizeQuizContent = (dirty) => {
   });
 };
 
-/**
- * Sanitize message content (student-instructor messaging)
- * Allow basic formatting and links
- */
 const sanitizeMessage = (dirty) => {
   return DOMPurify.sanitize(dirty, {
     ALLOWED_TAGS: ['p', 'br', 'strong', 'em', 'a', 'code', 'pre', 'ul', 'ol', 'li'],
@@ -74,9 +56,6 @@ const sanitizeMessage = (dirty) => {
   });
 };
 
-// ==========================
-// Express-validator chains
-// ==========================
 
 const validateCourseInput = [
   body('title')
