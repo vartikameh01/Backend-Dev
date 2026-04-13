@@ -1,10 +1,6 @@
 'use strict';
 
-/**
- * validation.test.js
- * Tests for: input validation and sanitization (Task 2).
- * Covers patient personal info, medical text, dates, SSN, phone, email.
- */
+
 
 process.env.ENCRYPTION_KEY = 'a'.repeat(64);
 process.env.NODE_ENV = 'test';
@@ -27,14 +23,13 @@ const {
   sanitizeObject,
 } = require('../src/utils/sanitizers');
 
-// ─── Helper ───────────────────────────────────────────────────────────────────
+
 async function runChain(chain, reqPartial) {
   const req = { body: {}, query: {}, params: {}, headers: {}, ...reqPartial };
   await chain.run(req);
   return validationResult(req);
 }
 
-// ─── Email Validation ─────────────────────────────────────────────────────────
 describe('Email Validation (Task 2)', () => {
   test('accepts valid email', async () => {
     const r = await runChain(validateEmail(), { body: { email: 'patient@hospital.org' } });
@@ -62,7 +57,7 @@ describe('Email Validation (Task 2)', () => {
   });
 });
 
-// ─── SSN Validation ───────────────────────────────────────────────────────────
+
 describe('SSN Validation (Task 2)', () => {
   test('accepts valid SSN', async () => {
     const r = await runChain(validateSSN(), { body: { ssn: '123-45-6789' } });
@@ -95,7 +90,7 @@ describe('SSN Validation (Task 2)', () => {
   });
 });
 
-// ─── Phone Validation ─────────────────────────────────────────────────────────
+
 describe('Phone Validation (Task 2)', () => {
   test('accepts US phone (XXX) XXX-XXXX', async () => {
     const r = await runChain(validatePhone(), { body: { phone: '(800) 555-1234' } });
@@ -118,7 +113,7 @@ describe('Phone Validation (Task 2)', () => {
   });
 });
 
-// ─── Date of Birth Validation ─────────────────────────────────────────────────
+
 describe('Date of Birth Validation (Task 2)', () => {
   test('rejects future date', async () => {
     const future = new Date(Date.now() + 86400000).toISOString().split('T')[0];
@@ -169,7 +164,7 @@ describe('Appointment Date Validation (Task 2)', () => {
   });
 });
 
-// ─── Medical Text Sanitization (Task 2: XSS prevention) ──────────────────────
+
 describe('Medical Text Sanitization (Task 2 — XSS prevention)', () => {
   test('strips <script> tags', () => {
     const input = 'Patient has fever.<script>alert(1)</script>';
@@ -205,7 +200,7 @@ describe('Medical Text Sanitization (Task 2 — XSS prevention)', () => {
   });
 });
 
-// ─── Plain Text Sanitization ──────────────────────────────────────────────────
+
 describe('Plain Text Sanitization (Task 2)', () => {
   test('strips all HTML tags', () => {
     expect(sanitizePlainText('<b>Hello</b>')).toBe('Hello');
@@ -227,7 +222,7 @@ describe('Plain Text Sanitization (Task 2)', () => {
   });
 });
 
-// ─── Search Query Sanitization (Task 4: injection prevention) ─────────────────
+
 describe('Search Query Sanitization (Task 2 + 4)', () => {
   test('removes MongoDB $ operator from search', () => {
     expect(sanitizeSearchQuery('{ $gt: "" }')).not.toContain('$');
