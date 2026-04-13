@@ -1,7 +1,3 @@
-/**
- * Upload Routes - EduLearn
- * Secure file upload with validation
- */
 
 const express = require('express');
 const router = express.Router();
@@ -16,9 +12,7 @@ const { validateMongoId } = require('../utils/sanitizer');
 const { validationResult } = require('express-validator');
 const logger = require('../utils/logger');
 
-// ========================
-// POST /api/uploads/document/:courseId
-// ========================
+
 router.post('/document/:courseId',
   isAuthenticated,
   isMfaVerified,
@@ -66,9 +60,6 @@ router.post('/document/:courseId',
   }
 );
 
-// ========================
-// POST /api/uploads/video/:courseId
-// ========================
 router.post('/video/:courseId',
   isAuthenticated,
   isMfaVerified,
@@ -116,10 +107,6 @@ router.post('/video/:courseId',
   }
 );
 
-// ========================
-// GET /api/uploads/:filename
-// Authenticated access only - no direct static serving
-// ========================
 router.get('/:filename', isAuthenticated, (req, res, next) => {
   // Prevent path traversal
   const filename = path.basename(req.params.filename);
