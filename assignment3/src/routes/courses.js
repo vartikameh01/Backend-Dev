@@ -1,6 +1,4 @@
-/**
- * Course Routes - EduLearn
- */
+
 
 const express = require('express');
 const router = express.Router();
@@ -12,10 +10,7 @@ const { isAuthenticated, authorize, isOwnerOrAdmin, isMfaVerified } = require('.
 const { validateCourseInput, validateMongoId } = require('../utils/sanitizer');
 const logger = require('../utils/logger');
 
-// ========================
-// GET /api/courses
-// Public - list published courses
-// ========================
+
 router.get('/', async (req, res, next) => {
   try {
     // Only allow safe sort fields to prevent injection
@@ -51,10 +46,6 @@ router.get('/', async (req, res, next) => {
   }
 });
 
-// ========================
-// POST /api/courses
-// Instructor only
-// ========================
 router.post('/', isAuthenticated, isMfaVerified, authorize('instructor', 'admin'), validateCourseInput, async (req, res, next) => {
   try {
     const errors = validationResult(req);
@@ -80,9 +71,6 @@ router.post('/', isAuthenticated, isMfaVerified, authorize('instructor', 'admin'
   }
 });
 
-// ========================
-// GET /api/courses/:id
-// ========================
 router.get('/:id', validateMongoId, async (req, res, next) => {
   try {
     const errors = validationResult(req);
@@ -101,10 +89,7 @@ router.get('/:id', validateMongoId, async (req, res, next) => {
   }
 });
 
-// ========================
-// PUT /api/courses/:id
-// Instructor (owner) or admin only
-// ========================
+
 router.put('/:id',
   isAuthenticated,
   isMfaVerified,
@@ -137,9 +122,6 @@ router.put('/:id',
   }
 );
 
-// ========================
-// DELETE /api/courses/:id
-// ========================
 router.delete('/:id',
   isAuthenticated,
   authorize('instructor', 'admin'),
@@ -162,10 +144,6 @@ router.delete('/:id',
   }
 );
 
-// ========================
-// POST /api/courses/:id/enroll
-// Student only
-// ========================
 router.post('/:id/enroll', isAuthenticated, authorize('student'), validateMongoId, async (req, res, next) => {
   try {
     const errors = validationResult(req);
