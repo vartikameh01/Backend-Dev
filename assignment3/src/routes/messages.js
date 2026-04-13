@@ -1,7 +1,3 @@
-/**
- * Message Routes - EduLearn
- * Student-instructor messaging
- */
 
 const express = require('express');
 const router = express.Router();
@@ -14,9 +10,7 @@ const { isAuthenticated, isOwnerOrAdmin } = require('../middleware/auth');
 const { validateMessageInput, validateMongoId } = require('../utils/sanitizer');
 const logger = require('../utils/logger');
 
-// ========================
-// GET /api/messages/inbox
-// ========================
+
 router.get('/inbox', isAuthenticated, async (req, res, next) => {
   try {
     const page = Math.max(1, parseInt(req.query.page) || 1);
@@ -36,10 +30,7 @@ router.get('/inbox', isAuthenticated, async (req, res, next) => {
   }
 });
 
-// ========================
-// GET /api/messages/:id
-// Only sender or recipient can read
-// ========================
+
 router.get('/:id',
   isAuthenticated,
   validateMongoId,
@@ -76,9 +67,7 @@ router.get('/:id',
   }
 );
 
-// ========================
-// POST /api/messages
-// ========================
+
 router.post('/', isAuthenticated, validateMessageInput, async (req, res, next) => {
   try {
     const errors = validationResult(req);
