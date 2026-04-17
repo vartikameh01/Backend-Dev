@@ -1,12 +1,8 @@
-// app.js
+
 const express = require('express');
 const app = express();
 
 app.use(express.json());
-
-// --------------------
-// In-memory data store
-// --------------------
 let books = [
   { id: 1, title: 'The Great Gatsby', author: 'F. Scott Fitzgerald', year: 1925 },
   { id: 2, title: '1984', author: 'George Orwell', year: 1949 },
@@ -43,9 +39,6 @@ let authors = [
 let nextBookId = 16;
 let nextAuthorId = 13;
 
-// --------------------
-// Middleware
-// --------------------
 
 // Exercise 2: Validation middleware
 const validateBook = (req, res, next) => {
@@ -68,10 +61,6 @@ const validateBook = (req, res, next) => {
   req.body.year = parsedYear;
   next();
 };
-
-// --------------------
-// BOOK ROUTES
-// --------------------
 
 // CREATE
 app.post('/api/books', validateBook, (req, res) => {
@@ -202,9 +191,6 @@ app.delete('/api/books/:id', (req, res) => {
   });
 });
 
-// --------------------
-// AUTHOR ROUTES
-// --------------------
 // Exercise 4: New resource CRUD
 
 // CREATE
@@ -275,9 +261,6 @@ app.delete('/api/authors/:id', (req, res) => {
   });
 });
 
-// --------------------
-// Error Handling
-// --------------------
 app.use((req, res) => {
   res.status(404).json({ error: 'Route not found' });
 });
@@ -287,7 +270,6 @@ app.use((err, req, res, next) => {
   res.status(500).json({ error: 'Something went wrong!' });
 });
 
-// --------------------
 const PORT = 3000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
