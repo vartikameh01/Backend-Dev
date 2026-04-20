@@ -1,0 +1,50 @@
+[2026-02-04T08:15:23.451Z] INFO Server started on port 8080
+[2026-02-04T08:15:23.892Z] INFO Database connection pool initialized with 10 connections
+[2026-02-04T08:15:24.103Z] INFO Loading configuration from /etc/app/config.yml
+[2026-02-04T08:15:24.567Z] INFO Cache service initialized successfully
+[2026-02-04T08:15:24.891Z] INFO Application ready to accept requests
+[2026-02-04T08:17:35.234Z] INFO User login successful - user_id: usr_4829
+[2026-02-04T08:18:42.567Z] INFO Request processed - endpoint: /api/files/list - duration: 45ms
+[2026-02-04T08:19:15.789Z] WARN Disk space low on volume /data - 15% remaining
+[2026-02-04T08:20:03.123Z] INFO File uploaded - file_id: f_9281 - size: 2.3MB
+[2026-02-04T08:21:47.456Z] INFO User login successful - user_id: usr_5201
+[2026-02-04T08:23:12.891Z] INFO Request processed - endpoint: /api/files/download - duration: 123ms
+[2026-02-04T08:24:55.234Z] DEBUG Cache hit for key: user_session_usr_4829
+[2026-02-04T08:26:31.567Z] INFO File deleted - file_id: f_8102 - user_id: usr_5201
+[2026-02-04T08:28:19.890Z] WARN Connection pool exhausted - waiting for available connection
+[2026-02-04T08:28:20.234Z] INFO Connection acquired from pool
+[2026-02-04T08:30:45.678Z] ERROR Database query failed - table: files - error: connection timeout
+[2026-02-04T08:30:45.789Z] WARN Retrying database query - attempt 1 of 3
+[2026-02-04T08:30:46.123Z] INFO Database query successful on retry
+[2026-02-04T08:32:18.456Z] INFO User logout - user_id: usr_4829 - session_duration: 14m 43s
+[2026-02-04T08:35:42.789Z] INFO Scheduled task started - task: cleanup_temp_files
+[2026-02-04T08:35:43.234Z] INFO Cleaned up 127 temporary files - freed: 456MB
+[2026-02-04T08:35:43.567Z] INFO Scheduled task completed - task: cleanup_temp_files - duration: 778ms
+[2026-02-04T08:38:29.890Z] ERROR File upload failed - file_id: f_9284 - error: invalid file type
+[2026-02-04T08:38:30.123Z] WARN User exceeded upload quota - user_id: usr_5201
+[2026-02-04T08:41:15.456Z] INFO User login successful - user_id: usr_6732
+[2026-02-04T08:43:52.789Z] DEBUG Cache miss for key: user_preferences_usr_6732
+[2026-02-04T08:43:53.012Z] INFO Loading user preferences from database - user_id: usr_6732
+[2026-02-04T08:46:27.345Z] INFO Request processed - endpoint: /api/files/search - duration: 234ms
+[2026-02-04T08:48:41.678Z] WARN High memory usage detected - current: 85% - threshold: 80%
+[2026-02-04T08:49:03.901Z] INFO Garbage collection completed - freed: 512MB
+[2026-02-04T08:51:19.234Z] ERROR Database connection lost - attempting reconnection
+[2026-02-04T08:51:20.567Z] INFO Database reconnected successfully
+[2026-02-04T08:53:45.890Z] INFO File shared - file_id: f_9281 - shared_with: usr_7201
+[2026-02-04T08:56:12.123Z] INFO Request processed - endpoint: /api/files/upload - duration: 1567ms
+[2026-02-04T08:58:37.456Z] DEBUG Session validation successful - user_id: usr_6732
+[2026-02-04T09:01:24.789Z] WARN API rate limit approaching - user_id: usr_5201 - requests: 95/100
+[2026-02-04T09:03:51.012Z] ERROR API rate limit exceeded - user_id: usr_5201 - blocking for 60s
+[2026-02-04T09:06:18.345Z] INFO User logout - user_id: usr_5201 - session_duration: 44m 31s
+[2026-02-04T09:08:45.678Z] INFO Health check passed - all services operational
+[2026-02-04T09:11:12.901Z] INFO Backup task started - target: database
+[2026-02-04T09:11:45.234Z] INFO Database backup completed - size: 3.2GB - location: /backups/db_20260204.sql
+[2026-02-04T09:14:19.567Z] WARN SSL certificate expiring in 30 days - domain: api.example.com
+[2026-02-04T09:16:46.890Z] INFO Request processed - endpoint: /api/auth/refresh - duration: 78ms
+[2026-02-04T09:19:13.123Z] DEBUG WebSocket connection established - client_id: ws_8392
+[2026-02-04T09:21:40.456Z] INFO Real-time notification sent - user_id: usr_6732 - type: file_shared
+[2026-02-04T09:24:07.789Z] ERROR Timeout occurred while processing request - endpoint: /api/files/convert - duration: 30000ms
+[2026-02-04T09:26:34.012Z] INFO User login successful - user_id: usr_8401
+[2026-02-04T09:29:01.345Z] INFO File encryption completed - file_id: f_9285 - algorithm: AES-256
+[2026-02-04T09:31:28.678Z] WARN Disk space low on volume /data - 12% remaining - consider cleanup
+[2026-02-04T09:33:55.901Z] INFO Cache cleared - keys_removed: 1523 - memory_freed: 234MB
