@@ -1,0 +1,126 @@
+body{
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+    background:#cfd7e6;
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+
+/* Logo */
+.logo{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+.logo-box{
+    width:60px;
+    height:60px;
+    background:#2563eb;
+    border-radius:12px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:white;
+    font-size:28px;
+    margin:auto;
+}
+
+.logo h1{
+    margin:10px 0 5px;
+}
+
+.logo p{
+    color:#555;
+}
+
+/* Card */
+.card{
+    background:white;
+    width:360px;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0 6px 15px rgba(0,0,0,0.1);
+}
+
+.card h2{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+label{
+    font-size:14px;
+}
+
+input{
+    width:100%;
+    padding:10px;
+    margin-top:6px;
+    margin-bottom:12px;
+    border:1px solid #ccc;
+    border-radius:6px;
+}
+
+.options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+}
+
+.remember {
+    display: flex;
+    align-items: center;
+    gap: 5px;   /* space between checkbox & text */
+}
+
+.options a{
+    text-decoration:none;
+    color:#2563eb;
+}
+
+select{
+    width:100%;
+    padding:10px;
+    margin-top:6px;
+    margin-bottom:12px;
+    border:1px solid #ccc;
+    border-radius:6px;
+    background:white;
+    font-size:14px;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    background:#3b82f6;
+    border:none;
+    color:white;
+    border-radius:6px;
+    margin-top:15px;
+    font-size:16px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#2563eb;
+}
+
+.signup{
+    text-align:center;
+    font-size:14px;
+    margin-top:15px;
+}
+
+.signup a{
+    text-decoration:none;
+    color:#2563eb;
+}
+
+.footer{
+    margin-top:20px;
+    font-size:13px;
+    color:#555;
+}

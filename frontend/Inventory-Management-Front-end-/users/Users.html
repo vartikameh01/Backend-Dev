@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Management</title>
+    <link rel="stylesheet" href="./Users.css">
+</head>
+<body>
+
+<div class="container">
+    
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>InvenTrack</h2>
+        <ul>
+    <li onclick="location.href='/dashboard/dashboard.html'">Dashboard</li>
+    <li onclick="location.href='/product/product.html'">Products</li>
+    <li onclick="location.href='/sales/sales.html'">Sales</li>
+    <li onclick="location.href='/purchase/purchase.html'">Purchases</li>
+    <li class="active">Users</li>
+</ul>
+
+        <ul class="bottom-menu">
+            <li onclick="location.href='/setting/setting.html'">Settings</li>
+            <li onclick="logoutUser()">Logout</li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main">
+
+        <div class="header">
+            <h1>User Management</h1>
+            <button onclick="openForm()">+ Add User</button>
+        </div>
+
+        <!-- Search -->
+        <input type="text" id="search" placeholder="Search users..." onkeyup="searchUser()">
+
+        <!-- Table -->
+        <table>
+            <thead>
+                <tr>
+                    <th>NAME</th>
+                    <th>EMAIL</th>
+                    <th>STATUS</th>
+                    <th>ACTION</th>
+                </tr>
+            </thead>
+            <tbody id="userTable"></tbody>
+        </table>
+
+    </div>
+</div>
+
+<!-- Add User Form -->
+<div class="modal" id="modal">
+    <div class="form">
+        <h2>Add User</h2>
+
+        <input type="text" id="name" placeholder="Name" >
+        <input type="email" id="email" placeholder="Email">
+        <input type="password" id="password" placeholder="Password">
+
+        <select id="role">
+            <option value="admin">Admin</option>
+            <option value="manager">Manager</option>
+            <option value="staff">Staff</option>
+        </select>
+
+        <button onclick="addUser()">Save</button>
+        <button onclick="closeForm()">Cancel</button>
+    </div>
+</div>
+
+<script>
+// auth check
+// if(!localStorage.getItem("token")){
+//     location.href = "/logging/logging.html";
+// }
+function logoutUser(){
+    localStorage.removeItem("token");
+    localStorage.removeItem("userName");
+    localStorage.removeItem("userRole");
+    localStorage.removeItem("userEmail");
+    location.href = "/logging/logging.html";
+}
+</script>
+<script src="./Users.js"></script>
+</body>
+</html>

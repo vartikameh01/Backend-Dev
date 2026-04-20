@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard</title>
+
+<link rel="stylesheet" href="./dashboard.css">
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- Sidebar -->
+<div class="sidebar">
+    <h2>InvenTrack</h2>
+<ul>
+    <li class="active" onclick="go('/dashboard.html')">Dashboard</li>
+    <li onclick="go('/product/product.html')">Products</li>
+    <li onclick="go('/sales/sales.html')">Sales</li>
+    <li onclick="go('/purchase/purchase.html')">Purchases</li>
+    <li onclick="go('/users/users.html')">Users</li>
+</ul>
+
+<ul class="bottom-menu">
+    <li onclick="go('/setting/setting.html')">Settings</li>
+    <li onclick="logout()">Logout</li>
+</ul>
+</div>
+
+<!-- Main -->
+<div class="main">
+
+    <!-- Header -->
+    <div class="header">
+        <h1>Dashboard</h1>
+    </div>
+
+    <p>Welcome back, John </p>
+
+    <!-- Cards -->
+    <div class="cards">
+
+        <div class="card">
+            <h4>Total Products</h4>
+            <h2>1,234</h2>
+            <p class="green">+12% growth</p>
+        </div>
+
+        <div class="card">
+            <h4>Total Sales</h4>
+            <h2>$45,200</h2>
+            <p class="green">+8% growth</p>
+        </div>
+
+        <div class="card">
+            <h4>Low Stock</h4>
+            <h2>15</h2>
+            <p class="red">-3% drop</p>
+        </div>
+
+        <div class="card">
+            <h4>Revenue</h4>
+            <h2>$128,500</h2>
+            <p class="green">+23% growth</p>
+        </div>
+
+    </div>
+
+    <!-- Images Section -->
+    <div class="images">
+
+        <div class="img-box">
+            <h3>Sales Overview</h3>
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71">
+        </div>
+
+        <div class="img-box">
+            <h3>Revenue Insights</h3>
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f">
+        </div>
+
+    </div>
+
+    <!-- Activity -->
+    <div class="activity">
+        <h3>Recent Activity</h3>
+
+        <p> New order #1234 - $456</p>
+        <p> Low stock alert - Product A</p>
+        <p> New product added</p>
+        <p> Sale completed - Invoice #5678</p>
+    </div>
+
+</div>
+
+</div>
+</body>
+</html>

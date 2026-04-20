@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Products</title>
+    <link rel="stylesheet" href="./product.css">
+</head>
+    
+<body>
+
+<div class="container">
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>InvenTrack</h2>
+         <ul>
+    <li onclick="location.href='/dashboard/dashboard.html'">Dashboard</li>
+    <li class="active">Products</li>
+    <li onclick="location.href='/sales/sales.html'">Sales</li>
+    <li onclick="location.href='/purchase/purchase.html'">Purchases</li>
+    <li onclick="location.href='/users/Users.html'">Users</li>
+</ul>
+
+        <ul class="bottom-menu">
+            <li  onclick="location.href='/setting/setting.html'">Settings</li>
+            <li onclick="logoutUser()">Logout</li>
+        </ul>
+    </div>
+
+    <!-- Main -->
+    <div class="main">
+
+        <div class="header">
+            <h1>Products</h1>
+            <button onclick="openForm()">+ Add Product</button>
+        </div>
+
+        <!-- Search -->
+        <input type="text" id="search" placeholder="Search products..." onkeyup="searchProduct()">
+
+        <!-- Table -->
+        <table>
+            <thead>
+                <tr>
+                    <th>NAME</th>
+                    <th>CATEGORY</th>
+                    <th>PRICE</th>
+                    <th>QUANTITY</th>
+                    <th>SUPPLIER</th>
+                    <th>DESCRIPTION</th>
+                    <th>ACTION</th>
+                </tr>
+            </thead>
+            <tbody id="productTable"></tbody>
+        </table>
+
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal" id="modal">
+    <div class="form">
+        <h2>Add Product</h2>
+
+        <input type="text" id="name" placeholder="Product Name">
+        <input type="text" id="category" placeholder="Category">
+        <input type="number" id="price" placeholder="Price">
+        <input type="number" id="quantity" placeholder="Quantity">
+        <input type="text" id="supplier" placeholder="Supplier">
+        <input type="text" id="description" placeholder="Description">
+
+        <button onclick="addProduct()">Save</button>
+        <button onclick="closeForm()">Cancel</button>
+    </div>
+</div>
+
+<script>
+// auth check
+// if(!localStorage.getItem("token")){
+//     location.href = "/logging/logging.html";
+// }
+function logoutUser(){
+    localStorage.removeItem("token");
+    localStorage.removeItem("userName");
+    localStorage.removeItem("userRole");
+    localStorage.removeItem("userEmail");
+    location.href = "/logging/logging.html";
+}
+</script>
+<script src="./product.js"></script>
+
+</body>
+</html>
