@@ -8,6 +8,6 @@ project repo link(frontend):https://github.com/vartikameh01/Inventory-Management
 
 procject repo link (Backend):https://github.com/SpellCell/Inventory-Management
 
-Backend-Dev(Repo)/project-frontend(branch):https://github.com/vartikameh01/Backend-Dev/tree/project-frontend
-
 Documentation link(pdf):https://drive.google.com/file/d/1e9ZkhHcH2ow9A2IdOZygW0jHv5QlLA4A/view?usp=sharing
+
+Backend-Dev(Repo)/project-frontend(branch):https://github.com/vartikameh01/Backend-Dev/tree/project-frontend
