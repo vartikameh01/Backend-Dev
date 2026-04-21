@@ -11,3 +11,5 @@ procject repo link (Backend):https://github.com/SpellCell/Inventory-Management
 Documentation link(pdf):https://drive.google.com/file/d/1e9ZkhHcH2ow9A2IdOZygW0jHv5QlLA4A/view?usp=sharing
 
 Backend-Dev(Repo)/project-frontend(branch):https://github.com/vartikameh01/Backend-Dev/tree/project-frontend
+
+leetcode(link):https://leetcode.com/u/vartika_meh01/
